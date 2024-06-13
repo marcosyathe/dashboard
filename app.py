@@ -3,9 +3,7 @@ from  dash import dcc, html, dash_table
 import plotly.graph_objects as go
 import pandas as pd
 
-app = dash.Dash(__name__)
-
-server = app.server
+app = dash.Dash(__name__, external_stylesheets=['assets/style.css'])
 
 # Carrega os dados do CSV
 df = pd.read_csv('data.csv')
@@ -20,7 +18,7 @@ app.layout = [
         html.Div(className='logo-container',children=[
             html.Img(className='logo',src='assets/logo.png'),
         ]), 
-        #html.H1(className='title',children='Dashboard')
+        html.H1(className='title',children='Dashboard')
     ]),
 
     html.Div(
@@ -28,24 +26,20 @@ app.layout = [
     children=[
         # Primeira linha: imagens
         html.Div(
-            className='grid-item imgs-container',
+            className='grid-item img-container',
             children=[
-                html.Div(
-                    className='img-container',
-                    children=[
-                        html.H2(className='chart-title',children='Imageamento'),
-                        html.Img(src='assets/plantacao1.png', alt='Plantacao 1', style={'width': '500px', 'height': '500px'}),
-                    ]
+                html.H2(className='chart-title',children='Imageamento'),
+                html.Img(src='assets/plantacao1.png', alt='Plantacao 1', style={'width': '500px', 'height': '500px'}),
+            ]
         ),
         html.Div(
-            className='img-container',
+            className='grid-item img-container',
             children=[
-                html.H2(className='chart-title',children='Imagem Gerada pela ETKHA Plantas daninhas'),
+                html.H2(className='chart-title',children='Imagem Gerada pela ETKHA Plantas Daninhas'),
+
                 html.Img(src='assets/plantacao1.png', alt='Plantacao 2', style={'width': '500px', 'height': '500px'}),
-                ]
-        ),
             ]
-    ),
+        ),
         # Segunda linha: tabela e gráfico
         html.Div(
             className='grid-item table-container',
