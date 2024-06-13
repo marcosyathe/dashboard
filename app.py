@@ -5,6 +5,8 @@ import pandas as pd
 
 app = dash.Dash(__name__, external_stylesheets=['assets/style.css'])
 
+server = app.server
+
 # Carrega os dados do CSV
 df = pd.read_csv('data.csv')
 
