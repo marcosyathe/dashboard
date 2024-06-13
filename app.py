@@ -3,7 +3,7 @@ from  dash import dcc, html, dash_table
 import plotly.graph_objects as go
 import pandas as pd
 
-app = dash.Dash(__name__, external_stylesheets=['assets/style.css'])
+app = dash.Dash(__name__)
 
 server = app.server
 
