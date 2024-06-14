@@ -20,7 +20,7 @@ app.layout = [
         html.Div(className='logo-container',children=[
             html.Img(className='logo',src='assets/logo.png'),
         ]), 
-        html.H1(className='title',children='Dashboard')
+        #html.H1(className='title',children='Dashboard')
     ]),
 
     html.Div(
